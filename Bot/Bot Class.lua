@@ -25,6 +25,10 @@ function BOT_TEMPLATE.GenerateProxyTable(t, funct)
 	return proxy
 end 
 
+function BOT_TEMPLATE.ReturnFile(name) -- Return File 
+	local map = readfile("RoEx-Bot/map.lua")
+	return readfile(map[name])
+end 
 
 --dynamic 
 BOT_TEMPLATE.CACHE = BOT_TEMPLATE.GenerateProxyTable({}, CACHE_INSTRUCTIONS)
