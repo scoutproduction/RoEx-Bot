@@ -1,6 +1,11 @@
 
+function ReturnFile(name) -- Return File 
+	local map = readfile("RoEx-Bot/map.lua")
+	return readfile(map[name])
+end 
+
 function CreateBot(gameName,userName,itemName)
-	local bot = require(script.Parent.bot)
+	local bot = ReturnFile('Bot')
 	
 	local function GetModule()
 		for _, instance in pairs(script.Parent.classes.modules:GetChildren()) do 
@@ -20,7 +25,7 @@ function CreateBot(gameName,userName,itemName)
 
 	if bot.DATA.MODULE_NAME then 
 		print("Assigning Class") 
-		local class = require(bot.DATA.MODULE)
+		local class = ReturnFile(bot.DATA.MODULE_NAME)
 		bot:LoadData({Class = class.Create(bot)})
 		if bot.DATA.MODULE then 
 			bot:IntiateTrade()
