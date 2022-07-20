@@ -4,7 +4,7 @@ function ReturnFile(name) -- Return File
 	return readfile(map[name])
 end 
 
-function CreateBot(gameName,userName,itemName)
+function ExecuteTrade(gameName,userName,itemName)
 	local bot = ReturnFile('Bot')
 	
 	local function GetModule()
